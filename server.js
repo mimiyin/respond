@@ -190,7 +190,7 @@ conductors.on("connection", socket => {
 });
 
 // Keep track of max audience connections
-let AMAX = 50;
+let AMAX = 35;
 
 // Listen for audience clients to connect
 audience.on("connection", socket => {
