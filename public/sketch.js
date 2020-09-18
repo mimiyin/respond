@@ -74,7 +74,7 @@ function draw() {
         console.log("Completed!");
         completed = true;
         intro.hide();
-        toggle(5);
+        //toggle(5);
         // Get the start status.
         // socket.emit('get start');
         background(0);
@@ -89,7 +89,14 @@ function draw() {
   if (tested) sz = map(sum, 0.1, 1, 0, 5);
   else sz = map(sum, 0.1, 10, 0, 5);
 
-  fill(255, 2);
+  fill(255, 3);
   noStroke();
   ellipse(random(width), random(height), sz, sz);
+  // if(completed && frameCount % floor(random(180, 600)) == 0) {
+  //   background(0);
+  // }
+
+  if(completed) {
+    background(0, 5);
+  }
 }
