@@ -43,7 +43,7 @@ function getStream(cb) {
 
           if (completed) {
             sum = audio.enabled ? sum : 0;
-            // socket.emit("data",  sum / bins.length);
+            socket.emit("data",  nfs(sum / bins.length, 0, 3));
           }
         };
 
@@ -53,10 +53,10 @@ function getStream(cb) {
       // Error callback
       .catch(function(err) {
         console.log("The following getUserMedia error occured: " + err);
-        // socket.emit('no mic');
+        socket.emit('no mic');
       });
   } else {
     console.log("getUserMedia not supported on your browser!");
-    // socket.emit('no mic');
+    socket.emit('no mic');
   }
 }
